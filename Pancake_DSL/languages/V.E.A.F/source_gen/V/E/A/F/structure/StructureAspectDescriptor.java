@@ -30,8 +30,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptVariableCondition = createDescriptorForVariableCondition();
   /*package*/ final ConceptDescriptor myConceptVariableInteger = createDescriptorForVariableInteger();
   /*package*/ final ConceptDescriptor myConceptVariableIntegerCondition = createDescriptorForVariableIntegerCondition();
-  /*package*/ final ConceptDescriptor myConceptVariableString = createDescriptorForVariableString();
-  /*package*/ final ConceptDescriptor myConceptVariableStringCondition = createDescriptorForVariableStringCondition();
   /*package*/ final EnumerationDescriptor myEnumerationOPERATOR = new EnumerationDescriptor_OPERATOR();
   /*package*/ final EnumerationDescriptor myEnumerationSIGNAL = new EnumerationDescriptor_SIGNAL();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -48,7 +46,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAction, myConceptComponent, myConceptComponentCondition, myConceptCondition, myConceptEvent, myConceptMultipleCondition, myConceptState, myConceptVEAF, myConceptVariable, myConceptVariableBoolean, myConceptVariableBooleanCondition, myConceptVariableCondition, myConceptVariableInteger, myConceptVariableIntegerCondition, myConceptVariableString, myConceptVariableStringCondition);
+    return Arrays.asList(myConceptAction, myConceptComponent, myConceptComponentCondition, myConceptCondition, myConceptEvent, myConceptMultipleCondition, myConceptState, myConceptVEAF, myConceptVariable, myConceptVariableBoolean, myConceptVariableBooleanCondition, myConceptVariableCondition, myConceptVariableInteger, myConceptVariableIntegerCondition);
   }
 
   @Override
@@ -83,10 +81,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptVariableInteger;
       case LanguageConceptSwitch.VariableIntegerCondition:
         return myConceptVariableIntegerCondition;
-      case LanguageConceptSwitch.VariableString:
-        return myConceptVariableString;
-      case LanguageConceptSwitch.VariableStringCondition:
-        return myConceptVariableStringCondition;
       default:
         return null;
     }
@@ -242,27 +236,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("expected", 0x5053c2963ccb5232L).type(PrimitiveTypeId.INTEGER).origin("5788183896622060082").done();
     b.associate("variable", 0x5053c2963ccb7f52L).target(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5053c2963cc9c00fL).optional(false).origin("5788183896622071634").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForVariableString() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("V.E.A.F", "VariableString", 0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5053c2963cc9c76bL);
-    b.class_(false, false, false);
-    // extends: V.E.A.F.structure.Variable
-    b.super_(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5afc605aa5c82241L);
-    b.origin("r:79efd526-4965-4b82-846b-97823ace55e0(V.E.A.F.structure)/5788183896621959019");
-    b.version(3);
-    b.property("value", 0x5053c2963cc9ca67L).type(PrimitiveTypeId.STRING).origin("5788183896621959783").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForVariableStringCondition() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("V.E.A.F", "VariableStringCondition", 0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5053c2963ccb60fbL);
-    b.class_(false, false, false);
-    // extends: V.E.A.F.structure.VariableCondition
-    b.super_(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x31e1baf5f2d06470L);
-    b.origin("r:79efd526-4965-4b82-846b-97823ace55e0(V.E.A.F.structure)/5788183896622063867");
-    b.version(3);
-    b.property("expected", 0x5053c2963ccb6807L).type(PrimitiveTypeId.STRING).origin("5788183896622065671").done();
-    b.associate("variable", 0x5053c2963ccb86beL).target(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5053c2963cc9c76bL).optional(false).origin("5788183896622073534").done();
     return b.create();
   }
 }

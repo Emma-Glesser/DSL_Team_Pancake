@@ -271,16 +271,6 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="51jKDoWMstF">
-    <property role="EcuMT" value="5788183896621959019" />
-    <property role="TrG5h" value="VariableString" />
-    <ref role="1TJDcQ" node="5FWo5E_M291" resolve="Variable" />
-    <node concept="1TJgyi" id="51jKDoWMsDB" role="1TKVEl">
-      <property role="IQ2nx" value="5788183896621959783" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="51jKDoWMOQm">
     <property role="EcuMT" value="5788183896622058902" />
     <property role="TrG5h" value="VariableIntegerCondition" />
@@ -311,22 +301,6 @@
       <property role="20kJfa" value="variable" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="51jKDoWMrp3" resolve="VariableBoolean" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="51jKDoWMQ3V">
-    <property role="EcuMT" value="5788183896622063867" />
-    <property role="TrG5h" value="VariableStringCondition" />
-    <ref role="1TJDcQ" node="37xIJnMO6hK" resolve="VariableCondition" />
-    <node concept="1TJgyi" id="51jKDoWMQw7" role="1TKVEl">
-      <property role="IQ2nx" value="5788183896622065671" />
-      <property role="TrG5h" value="expected" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="51jKDoWMSqY" role="1TKVEi">
-      <property role="IQ2ns" value="5788183896622073534" />
-      <property role="20kJfa" value="variable" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="51jKDoWMstF" resolve="VariableString" />
     </node>
   </node>
 </model>

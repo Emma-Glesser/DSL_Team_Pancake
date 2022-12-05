@@ -291,24 +291,6 @@
       <node concept="l2Vlx" id="51jKDoWMufj" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="51jKDoWMuig">
-    <ref role="1XX52x" to="4tdy:51jKDoWMstF" resolve="VariableString" />
-    <node concept="3EZMnI" id="51jKDoWMukt" role="2wV5jI">
-      <node concept="3F0ifn" id="51jKDoWMuku" role="3EZMnx">
-        <property role="3F0ifm" value="string variable" />
-      </node>
-      <node concept="3F0A7n" id="51jKDoWMukv" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-      </node>
-      <node concept="3F0ifn" id="51jKDoWMukw" role="3EZMnx">
-        <property role="3F0ifm" value="-&gt;" />
-      </node>
-      <node concept="3F0A7n" id="51jKDoWMukx" role="3EZMnx">
-        <ref role="1NtTu8" to="4tdy:51jKDoWMsDB" resolve="value" />
-      </node>
-      <node concept="l2Vlx" id="51jKDoWMuky" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="51jKDoWMRa$">
     <ref role="1XX52x" to="4tdy:51jKDoWMPp4" resolve="VariableBooleanCondition" />
     <node concept="3EZMnI" id="37xIJnMOxG1" role="2wV5jI">
@@ -349,27 +331,6 @@
         <ref role="1NtTu8" to="4tdy:51jKDoWMP8M" resolve="expected" />
       </node>
       <node concept="l2Vlx" id="51jKDoWMRkI" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="51jKDoWMRpt">
-    <ref role="1XX52x" to="4tdy:51jKDoWMQ3V" resolve="VariableStringCondition" />
-    <node concept="3EZMnI" id="51jKDoWMRr7" role="2wV5jI">
-      <node concept="1iCGBv" id="51jKDoWMRr8" role="3EZMnx">
-        <ref role="1NtTu8" to="4tdy:51jKDoWMSqY" resolve="variable" />
-        <node concept="1sVBvm" id="51jKDoWMRr9" role="1sWHZn">
-          <node concept="3F0A7n" id="51jKDoWMRra" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="51jKDoWMRrb" role="3EZMnx">
-        <property role="3F0ifm" value="is" />
-      </node>
-      <node concept="3F0A7n" id="51jKDoWMRrc" role="3EZMnx">
-        <ref role="1NtTu8" to="4tdy:51jKDoWMQw7" resolve="expected" />
-      </node>
-      <node concept="l2Vlx" id="51jKDoWMRrd" role="2iSdaV" />
     </node>
   </node>
 </model>

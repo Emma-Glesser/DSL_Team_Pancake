@@ -23,8 +23,6 @@ public final class LanguageConceptSwitch {
   public static final int VariableCondition = 11;
   public static final int VariableInteger = 12;
   public static final int VariableIntegerCondition = 13;
-  public static final int VariableString = 14;
-  public static final int VariableStringCondition = 15;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL);
@@ -42,8 +40,6 @@ public final class LanguageConceptSwitch {
     builder.put(0x31e1baf5f2d06470L, VariableCondition);
     builder.put(0x5053c2963cc9c00fL, VariableInteger);
     builder.put(0x5053c2963ccb4d96L, VariableIntegerCondition);
-    builder.put(0x5053c2963cc9c76bL, VariableString);
-    builder.put(0x5053c2963ccb60fbL, VariableStringCondition);
     myIndex = builder.seal();
   }
 

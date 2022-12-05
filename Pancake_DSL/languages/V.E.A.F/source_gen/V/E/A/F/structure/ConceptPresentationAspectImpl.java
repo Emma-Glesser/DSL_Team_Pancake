@@ -23,8 +23,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_VariableCondition;
   private ConceptPresentation props_VariableInteger;
   private ConceptPresentation props_VariableIntegerCondition;
-  private ConceptPresentation props_VariableString;
-  private ConceptPresentation props_VariableStringCondition;
 
   @Override
   @Nullable
@@ -126,20 +124,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_VariableIntegerCondition = cpb.create();
         }
         return props_VariableIntegerCondition;
-      case LanguageConceptSwitch.VariableString:
-        if (props_VariableString == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_VariableString = cpb.create();
-        }
-        return props_VariableString;
-      case LanguageConceptSwitch.VariableStringCondition:
-        if (props_VariableStringCondition == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5053c2963ccb60fbL, 0x5053c2963ccb86beL, "variable", "", "");
-          props_VariableStringCondition = cpb.create();
-        }
-        return props_VariableStringCondition;
     }
     return null;
   }
