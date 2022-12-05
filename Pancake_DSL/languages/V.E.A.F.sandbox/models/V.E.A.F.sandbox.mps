@@ -25,7 +25,6 @@
         <property id="2869153363540761809" name="pin" index="1S9TGp" />
       </concept>
       <concept id="2869153363540757721" name="V.E.A.F.structure.State" flags="ng" index="1S9SGh">
-        <property id="1801671670338843269" name="isInitial" index="2LrE1j" />
         <child id="2869153363540764964" name="actions" index="1S9UVG" />
       </concept>
     </language>
@@ -58,15 +57,7 @@
       <property role="TrG5h" value="state2" />
       <node concept="2LrEhn" id="51jKDoWLNv2" role="1S9UVG">
         <property role="3Zd5Ig" value="5FWo5E_M3KQ/LOW" />
-        <ref role="2LrETa" node="51jKDoWLMTE" resolve="BUZZER" />
-      </node>
-    </node>
-    <node concept="1S9SGh" id="51jKDoWLN6O" role="1S9YUL">
-      <property role="TrG5h" value="state1" />
-      <property role="2LrE1j" value="true" />
-      <node concept="2LrEhn" id="51jKDoWLNL$" role="1S9UVG">
-        <property role="3Zd5Ig" value="5FWo5E_M3KP/HIGH" />
-        <ref role="2LrETa" node="51jKDoWLMTE" resolve="BUZZER" />
+        <ref role="2LrETa" node="3AihLw0pRHR" resolve="BUZZER" />
       </node>
     </node>
     <node concept="1GAwap" id="51jKDoWMyIi" role="3Zd7YW">
