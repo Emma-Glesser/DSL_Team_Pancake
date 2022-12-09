@@ -8,7 +8,6 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -23,15 +22,22 @@ public class State_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
     tgs.indent();
+    tgs.append("delay(200);");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("while(1) {");
+    tgs.newLine();
+    ctx.getBuffer().area().increaseIndent();
     for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.actions$4$Xy)) {
       tgs.appendNode(item);
     }
-    if (!(ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.event$4MCa)).isEmpty())) {
-      tgs.indent();
-    }
-    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.event$4MCa)) {
+    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.transitions$4MCa)) {
       tgs.appendNode(item);
     }
+    ctx.getBuffer().area().decreaseIndent();
+    tgs.indent();
+    tgs.append("}");
+    tgs.newLine();
     ctx.getBuffer().area().decreaseIndent();
     tgs.append("}");
     tgs.newLine();
@@ -44,6 +50,6 @@ public class State_TextGen extends TextGenDescriptorBase {
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink actions$4$Xy = MetaAdapterFactory.getContainmentLink(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x27d147c85ff6e924L, "actions");
-    /*package*/ static final SContainmentLink event$4MCa = MetaAdapterFactory.getContainmentLink(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x1900d2d6a86e74c3L, "event");
+    /*package*/ static final SContainmentLink transitions$4MCa = MetaAdapterFactory.getContainmentLink(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x1900d2d6a86e74c3L, "transitions");
   }
 }

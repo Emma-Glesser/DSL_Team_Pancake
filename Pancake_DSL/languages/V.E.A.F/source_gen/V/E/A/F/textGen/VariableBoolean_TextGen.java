@@ -15,7 +15,7 @@ public class VariableBoolean_TextGen extends TextGenDescriptorBase {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append("boolean ");
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
-    tgs.append("=");
+    tgs.append(" = ");
     tgs.append(String.valueOf(SPropertyOperations.getBoolean(ctx.getPrimaryInput(), PROPS.value$ZpqK)));
     tgs.append(";");
     tgs.newLine();

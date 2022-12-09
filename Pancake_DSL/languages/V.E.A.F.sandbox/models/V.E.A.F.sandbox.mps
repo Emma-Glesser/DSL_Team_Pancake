@@ -7,9 +7,16 @@
   <imports />
   <registry>
     <language id="f152af7d-92d2-462f-acb4-a6902db66b9d" name="V.E.A.F">
-      <concept id="1801671670338844289" name="V.E.A.F.structure.Action" flags="ng" index="2LrEhn">
-        <property id="6556221099989285834" name="signal" index="3Zd5Ig" />
-        <reference id="1801671670338845852" name="target" index="2LrETa" />
+      <concept id="8855653570245177532" name="V.E.A.F.structure.VariableBooleanAction" flags="ng" index="36xUEW">
+        <reference id="8855653570245178939" name="variable" index="36xUKV" />
+      </concept>
+      <concept id="4293303684764839595" name="V.E.A.F.structure.AssigneVariableIntegerAction" flags="ng" index="1CR4Tv">
+        <reference id="4293303684764841078" name="variable" index="1CR5i2" />
+        <reference id="4293303684764842302" name="value" index="1CR5Ba" />
+      </concept>
+      <concept id="4293303684764843943" name="V.E.A.F.structure.AssigneVariableBooleanAction" flags="ng" index="1CR5Xj">
+        <reference id="4293303684764845036" name="variable" index="1CR2co" />
+        <reference id="4293303684764845844" name="value" index="1CR2vw" />
       </concept>
       <concept id="5788183896621957135" name="V.E.A.F.structure.VariableInteger" flags="ng" index="1GAwap">
         <property id="5788183896621958445" name="value" index="1GAwuV" />
@@ -55,10 +62,18 @@
     </node>
     <node concept="1S9SGh" id="51jKDoWLNs8" role="1S9YUL">
       <property role="TrG5h" value="state2" />
-      <node concept="2LrEhn" id="51jKDoWLNv2" role="1S9UVG">
-        <property role="3Zd5Ig" value="5FWo5E_M3KQ/LOW" />
-        <ref role="2LrETa" node="3AihLw0pRHR" resolve="BUZZER" />
+      <node concept="36xUEW" id="3IkSfhjka83" role="1S9UVG">
+        <ref role="36xUKV" node="51jKDoWMNQb" resolve="bool" />
       </node>
+      <node concept="1CR5Xj" id="3IkSfhjl3YT" role="1S9UVG">
+        <ref role="1CR2co" node="51jKDoWMNQb" resolve="bool" />
+        <ref role="1CR2vw" node="51jKDoWMNQb" resolve="bool" />
+      </node>
+      <node concept="1CR4Tv" id="3IkSfhjl3Z1" role="1S9UVG">
+        <ref role="1CR5i2" node="51jKDoWMyIi" resolve="x" />
+        <ref role="1CR5Ba" node="51jKDoWMyIi" resolve="x" />
+      </node>
+      <node concept="1CR5Xj" id="3IkSfhjlwEo" role="1S9UVG" />
     </node>
     <node concept="1GAwap" id="51jKDoWMyIi" role="3Zd7YW">
       <property role="TrG5h" value="x" />

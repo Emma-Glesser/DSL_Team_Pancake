@@ -1,6 +1,7 @@
 /*
 Scenario 2 : Dual-check alarm
-It will trigger a buzzer if and only if two buttons are pushed at the very same time. Releasing at least one of the button stop the sound
+It will trigger a buzzer if and only if two buttons are pushed at the very same 
+time. Releasing at least one of the button stop the sound
 */
 
 const byte pinBuzzer = 12; 

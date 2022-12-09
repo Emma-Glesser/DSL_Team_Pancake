@@ -15,7 +15,7 @@ public class VariableInteger_TextGen extends TextGenDescriptorBase {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append("int ");
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
-    tgs.append("=");
+    tgs.append(" = ");
     tgs.append(String.valueOf(SPropertyOperations.getInteger(ctx.getPrimaryInput(), PROPS.value$ExRY)));
     tgs.append(";");
     tgs.newLine();

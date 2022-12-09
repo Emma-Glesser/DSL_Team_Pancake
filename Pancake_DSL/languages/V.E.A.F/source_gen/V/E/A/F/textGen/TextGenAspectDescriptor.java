@@ -25,20 +25,42 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
-      case LanguageConceptSwitch.Action:
-        return new Action_TextGen();
+      case LanguageConceptSwitch.ActuatorAction:
+        return new ActuatorAction_TextGen();
+      case LanguageConceptSwitch.AssigneSensorAction:
+        return new AssigneSensorAction_TextGen();
+      case LanguageConceptSwitch.AssigneVariableBooleanAction:
+        return new AssigneVariableBooleanAction_TextGen();
+      case LanguageConceptSwitch.AssigneVariableIntegerAction:
+        return new AssigneVariableIntegerAction_TextGen();
       case LanguageConceptSwitch.Component:
         return new Component_TextGen();
-      case LanguageConceptSwitch.Event:
-        return new Event_TextGen();
+      case LanguageConceptSwitch.MultipleCondition:
+        return new MultipleCondition_TextGen();
+      case LanguageConceptSwitch.PauseAction:
+        return new PauseAction_TextGen();
+      case LanguageConceptSwitch.SensorCondition:
+        return new SensorCondition_TextGen();
       case LanguageConceptSwitch.State:
         return new State_TextGen();
+      case LanguageConceptSwitch.Transition:
+        return new Transition_TextGen();
+      case LanguageConceptSwitch.UnaryCondition:
+        return new UnaryCondition_TextGen();
       case LanguageConceptSwitch.VEAF:
         return new VEAF_TextGen();
       case LanguageConceptSwitch.VariableBoolean:
         return new VariableBoolean_TextGen();
+      case LanguageConceptSwitch.VariableBooleanAction:
+        return new VariableBooleanAction_TextGen();
+      case LanguageConceptSwitch.VariableBooleanCondition:
+        return new VariableBooleanCondition_TextGen();
       case LanguageConceptSwitch.VariableInteger:
         return new VariableInteger_TextGen();
+      case LanguageConceptSwitch.VariableIntegerAction:
+        return new VariableIntegerAction_TextGen();
+      case LanguageConceptSwitch.VariableIntegerCondition:
+        return new VariableIntegerCondition_TextGen();
     }
     return null;
   }

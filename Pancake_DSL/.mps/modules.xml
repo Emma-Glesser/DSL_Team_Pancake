@@ -5,6 +5,10 @@
       <modulePath path="$PROJECT_DIR$/languages/V.E.A.F.sandbox/V.E.A.F.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/V.E.A.F/V.E.A.F.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/Scenario1/Scenario1.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Scenario2/Scenario2.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Scenario3/Scenario3.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Scenario4/Scenario4.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Scenario5/Scenario5.msd" folder="" />
     </projectModules>
   </component>
 </project>

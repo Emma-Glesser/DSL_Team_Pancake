@@ -236,17 +236,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNodeList_1() {
-    AbstractCellListHandler handler = new eventListHandler_sjqidp_c3a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new transitionsListHandler_sjqidp_c3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_event");
+    editorCell.setCellId("refNodeList_transitions");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class eventListHandler_sjqidp_c3a extends RefNodeListHandler {
+  private static class transitionsListHandler_sjqidp_c3a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public eventListHandler_sjqidp_c3a(SNode ownerNode, EditorContext context) {
+    public transitionsListHandler_sjqidp_c3a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -256,10 +256,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.event$4MCa;
+      return LINKS.transitions$4MCa;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Event$T0;
+      return CONCEPTS.Transition$T0;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -269,7 +269,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(eventListHandler_sjqidp_c3a.this.getNode(), LINKS.event$4MCa));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(transitionsListHandler_sjqidp_c3a.this.getNode(), LINKS.transitions$4MCa));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -318,11 +318,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept Action$tj = MetaAdapterFactory.getConcept(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x1900d2d6a86e7681L, "V.E.A.F.structure.Action");
-    /*package*/ static final SConcept Event$T0 = MetaAdapterFactory.getConcept(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5afc605aa5c83e8fL, "V.E.A.F.structure.Event");
+    /*package*/ static final SConcept Transition$T0 = MetaAdapterFactory.getConcept(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5afc605aa5c83e8fL, "V.E.A.F.structure.Transition");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink actions$4$Xy = MetaAdapterFactory.getContainmentLink(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x27d147c85ff6e924L, "actions");
-    /*package*/ static final SContainmentLink event$4MCa = MetaAdapterFactory.getContainmentLink(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x1900d2d6a86e74c3L, "event");
+    /*package*/ static final SContainmentLink transitions$4MCa = MetaAdapterFactory.getContainmentLink(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x1900d2d6a86e74c3L, "transitions");
   }
 }

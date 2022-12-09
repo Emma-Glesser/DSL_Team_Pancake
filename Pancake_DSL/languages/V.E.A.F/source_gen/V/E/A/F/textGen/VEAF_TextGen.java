@@ -10,30 +10,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class VEAF_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("/* Declare composants*/");
+    tgs.append("/* Components */");
     tgs.newLine();
     for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.components$_mBv)) {
       tgs.appendNode(item);
     }
+
     tgs.newLine();
 
-    tgs.append("/* Declare variables */");
+    tgs.append("/* Variables */");
     tgs.newLine();
     for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.variables$mt5O)) {
       tgs.appendNode(item);
     }
     tgs.newLine();
 
-    tgs.append("/* Declare functions/states prototype*/");
+    tgs.append("/* States prototypes */");
     tgs.newLine();
     ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.states$ttUs)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -45,10 +49,6 @@ public class VEAF_TextGen extends TextGenDescriptorBase {
     });
     tgs.newLine();
 
-    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.states$ttUs)) {
-      tgs.appendNode(item);
-    }
-
     tgs.append("void setup() {");
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
@@ -59,10 +59,10 @@ public class VEAF_TextGen extends TextGenDescriptorBase {
         tgs.append("pinMode(");
         tgs.append(SPropertyOperations.getString(it, PROPS.name$MnvL));
         tgs.append(",");
-        if (SPropertyOperations.getBoolean(it, PROPS.isInput$dpqm)) {
+        if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), CONCEPTS.Sensor$$_)) {
           tgs.append("INPUT");
         }
-        if (!(SPropertyOperations.getBoolean(it, PROPS.isInput$dpqm))) {
+        if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), CONCEPTS.Actuator$ny)) {
           tgs.append("OUTPUT");
         }
         tgs.append(");");
@@ -89,6 +89,12 @@ public class VEAF_TextGen extends TextGenDescriptorBase {
     ctx.getBuffer().area().decreaseIndent();
     tgs.append("}");
     tgs.newLine();
+    tgs.newLine();
+
+    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.states$ttUs)) {
+      tgs.appendNode(item);
+    }
+
   }
 
   private static final class LINKS {
@@ -99,7 +105,11 @@ public class VEAF_TextGen extends TextGenDescriptorBase {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty isInput$dpqm = MetaAdapterFactory.getProperty(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6c4d2L, 0x31e1baf5f2c33c42L, "isInput");
     /*package*/ static final SProperty isInitial$JTL8 = MetaAdapterFactory.getProperty(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L, 0x1900d2d6a86e7285L, "isInitial");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Sensor$$_ = MetaAdapterFactory.getConcept(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x7ae59a00bc6224d3L, "V.E.A.F.structure.Sensor");
+    /*package*/ static final SConcept Actuator$ny = MetaAdapterFactory.getConcept(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x7ae59a00bc622074L, "V.E.A.F.structure.Actuator");
   }
 }
