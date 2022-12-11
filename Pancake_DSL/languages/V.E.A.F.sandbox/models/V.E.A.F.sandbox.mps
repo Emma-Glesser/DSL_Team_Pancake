@@ -10,14 +10,8 @@
       <concept id="8855653570245177532" name="V.E.A.F.structure.VariableBooleanAction" flags="ng" index="36xUEW">
         <reference id="8855653570245178939" name="variable" index="36xUKV" />
       </concept>
-      <concept id="4293303684764839595" name="V.E.A.F.structure.AssigneVariableIntegerAction" flags="ng" index="1CR4Tv">
-        <reference id="4293303684764841078" name="variable" index="1CR5i2" />
-        <reference id="4293303684764842302" name="value" index="1CR5Ba" />
-      </concept>
-      <concept id="4293303684764843943" name="V.E.A.F.structure.AssigneVariableBooleanAction" flags="ng" index="1CR5Xj">
-        <reference id="4293303684764845036" name="variable" index="1CR2co" />
-        <reference id="4293303684764845844" name="value" index="1CR2vw" />
-      </concept>
+      <concept id="8855653570245173364" name="V.E.A.F.structure.Actuator" flags="ng" index="36xVDO" />
+      <concept id="8855653570245174483" name="V.E.A.F.structure.Sensor" flags="ng" index="36xVVj" />
       <concept id="5788183896621957135" name="V.E.A.F.structure.VariableInteger" flags="ng" index="1GAwap">
         <property id="5788183896621958445" name="value" index="1GAwuV" />
       </concept>
@@ -28,7 +22,6 @@
         <child id="6556221099989278694" name="variables" index="3Zd7YW" />
       </concept>
       <concept id="2869153363540755666" name="V.E.A.F.structure.Component" flags="ng" index="1S9Scq">
-        <property id="3594359543121001538" name="isInput" index="338CqR" />
         <property id="2869153363540761809" name="pin" index="1S9TGp" />
       </concept>
       <concept id="2869153363540757721" name="V.E.A.F.structure.State" flags="ng" index="1S9SGh">
@@ -43,44 +36,28 @@
   </registry>
   <node concept="1S9NS0" id="5FWo5E_Mh5Y">
     <property role="TrG5h" value="test" />
-    <node concept="1S9Scq" id="51jKDoWLMTE" role="1S9Ye1">
-      <property role="TrG5h" value="LED" />
-      <property role="1S9TGp" value="12" />
-      <property role="338CqR" value="true" />
-    </node>
-    <node concept="1S9Scq" id="3AihLw0pRHR" role="1S9Ye1">
-      <property role="TrG5h" value="BUZZER" />
-      <property role="1S9TGp" value="12" />
-    </node>
-    <node concept="1S9Scq" id="3AihLw0suaJ" role="1S9Ye1">
-      <property role="TrG5h" value="LED" />
-      <property role="1S9TGp" value="11" />
-    </node>
-    <node concept="1S9Scq" id="3AihLw0sug5" role="1S9Ye1">
-      <property role="TrG5h" value="TEST" />
-      <property role="1S9TGp" value="5" />
-    </node>
-    <node concept="1S9SGh" id="51jKDoWLNs8" role="1S9YUL">
-      <property role="TrG5h" value="state2" />
-      <node concept="36xUEW" id="3IkSfhjka83" role="1S9UVG">
-        <ref role="36xUKV" node="51jKDoWMNQb" resolve="bool" />
-      </node>
-      <node concept="1CR5Xj" id="3IkSfhjl3YT" role="1S9UVG">
-        <ref role="1CR2co" node="51jKDoWMNQb" resolve="bool" />
-        <ref role="1CR2vw" node="51jKDoWMNQb" resolve="bool" />
-      </node>
-      <node concept="1CR4Tv" id="3IkSfhjl3Z1" role="1S9UVG">
-        <ref role="1CR5i2" node="51jKDoWMyIi" resolve="x" />
-        <ref role="1CR5Ba" node="51jKDoWMyIi" resolve="x" />
-      </node>
-      <node concept="1CR5Xj" id="3IkSfhjlwEo" role="1S9UVG" />
-    </node>
     <node concept="1GAwap" id="51jKDoWMyIi" role="3Zd7YW">
       <property role="TrG5h" value="x" />
       <property role="1GAwuV" value="1" />
     </node>
     <node concept="1GABjl" id="51jKDoWMNQb" role="3Zd7YW">
       <property role="TrG5h" value="bool" />
+    </node>
+    <node concept="1S9SGh" id="5S$RV48OBn2" role="1S9YUL">
+      <property role="TrG5h" value="AZEZERZER" />
+    </node>
+    <node concept="1S9SGh" id="5S$RV48OBn4" role="1S9YUL">
+      <property role="TrG5h" value="tet" />
+      <node concept="36xUEW" id="5S$RV48V3cq" role="1S9UVG">
+        <ref role="36xUKV" node="51jKDoWMNQb" resolve="bool" />
+      </node>
+    </node>
+    <node concept="36xVVj" id="5S$RV48UViu" role="1S9Ye1">
+      <property role="TrG5h" value="button" />
+    </node>
+    <node concept="36xVDO" id="5S$RV48V5LX" role="1S9Ye1">
+      <property role="TrG5h" value="on" />
+      <property role="1S9TGp" value="1" />
     </node>
   </node>
 </model>

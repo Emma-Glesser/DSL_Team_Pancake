@@ -21,10 +21,12 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       case 0:
         return new Component_Constraints();
       case 1:
-        return new VEAF_Constraints();
+        return new State_Constraints();
+      case 2:
+        return new Variable_Constraints();
       default:
     }
     return new BaseConstraintsDescriptor(concept);
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6c4d2L), MetaIdFactory.conceptId(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff679c8L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6c4d2L), MetaIdFactory.conceptId(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x27d147c85ff6ccd9L), MetaIdFactory.conceptId(0xf152af7d92d2462fL, 0xacb4a6902db66b9dL, 0x5afc605aa5c82241L)).seal();
 }

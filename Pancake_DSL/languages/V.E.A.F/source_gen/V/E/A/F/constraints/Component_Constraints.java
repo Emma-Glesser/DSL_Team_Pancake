@@ -64,11 +64,11 @@ public class Component_Constraints extends BaseConstraintsDescriptor {
       return result;
     }
     private static boolean staticValidateProperty(SNode node, final String propertyValue) {
-      return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), CONCEPTS.VEAF$mX), LINKS.components$_mBv)).where(new IWhereFilter<SNode>() {
+      return (String.valueOf(propertyValue).chars().filter((int c) -> !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || (c == '_'))).count() == 0) && ((propertyValue.charAt(0) >= 'a' && propertyValue.charAt(0) <= 'z') || (propertyValue.charAt(0) >= 'A' && propertyValue.charAt(0) <= 'Z')) && (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), CONCEPTS.VEAF$mX), LINKS.components$_mBv)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return Objects.equals(SPropertyOperations.getString(it, PROPS.name$MnvL), propertyValue);
         }
-      }).count() <= 1;
+      }).count() <= 1);
     }
   }
   @Override

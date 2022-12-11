@@ -217,7 +217,7 @@
     <ref role="1XX52x" to="4tdy:51jKDoWMrp3" resolve="VariableBoolean" />
     <node concept="3EZMnI" id="51jKDoWMtmO" role="2wV5jI">
       <node concept="3F0ifn" id="51jKDoWMtwh" role="3EZMnx">
-        <property role="3F0ifm" value="boolean variable" />
+        <property role="3F0ifm" value="boolean" />
       </node>
       <node concept="3F0A7n" id="51jKDoWMt$1" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -235,7 +235,7 @@
     <ref role="1XX52x" to="4tdy:51jKDoWMs0f" resolve="VariableInteger" />
     <node concept="3EZMnI" id="51jKDoWMufe" role="2wV5jI">
       <node concept="3F0ifn" id="51jKDoWMuff" role="3EZMnx">
-        <property role="3F0ifm" value="integer variable" />
+        <property role="3F0ifm" value="integer" />
       </node>
       <node concept="3F0A7n" id="51jKDoWMufg" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
