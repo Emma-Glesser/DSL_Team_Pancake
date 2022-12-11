@@ -486,7 +486,7 @@
             <node concept="1bpajm" id="3IkSfhjpz7d" role="3cqZAp" />
             <node concept="lc7rE" id="3IkSfhjp$za" role="3cqZAp">
               <node concept="la8eA" id="3IkSfhjp$Dy" role="lcghm">
-                <property role="lacIc" value="delay(200);" />
+                <property role="lacIc" value="delay(300);" />
               </node>
               <node concept="l8MVK" id="3IkSfhjpP4J" role="lcghm" />
             </node>

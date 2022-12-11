@@ -22,7 +22,7 @@ public class State_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
     tgs.indent();
-    tgs.append("delay(200);");
+    tgs.append("delay(300);");
     tgs.newLine();
     tgs.indent();
     tgs.append("while(1) {");
