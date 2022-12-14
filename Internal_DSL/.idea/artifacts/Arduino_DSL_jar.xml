@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Arduino_DSL:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Arduino_DSL_jar</output-path>
+    <root id="archive" name="Internal_DSL.jar">
+      <element id="module-output" name="Internal_DSL" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/3.0.6/groovy-3.0.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

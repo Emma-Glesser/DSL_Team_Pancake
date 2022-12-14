@@ -1,6 +1,7 @@
 package dsl
 
-import kernel.structural.SIGNAL
+import groovy.transform.TypeChecked
+import kernel.structural.Program
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.SecureASTCustomizer
 
@@ -8,31 +9,25 @@ class Arduino_DSL {
     private GroovyShell shell
     private CompilerConfiguration configuration
     private Arduino_DSL_Binding binding
-    private Arduino_DSL_Base_Script basescript
 
     Arduino_DSL() {
-        binding = new Arduino_DSL_Binding()
-        binding.setGroovuinoMLModel(new Arduino_DSL_Model(binding));
+        binding = Arduino_DSL_Binding.instance
+        binding.setArduino_DSL_Model(new Arduino_DSL_Model())
         configuration = getDSLConfiguration()
         configuration.setScriptBaseClass("dsl.Arduino_DSL_Base_Script")
         shell = new GroovyShell(configuration)
-
-        binding.setVariable("high", SIGNAL.HIGH)
-        binding.setVariable("low", SIGNAL.LOW)
     }
 
     private static CompilerConfiguration getDSLConfiguration() {
         def secure = new SecureASTCustomizer()
         secure.with {
             //disallow closure creation
-            closuresAllowed = false
+            closuresAllowed = true
             //disallow method definitions
             methodDefinitionAllowed = true
             //empty white list => forbid imports
-            importsWhitelist = [
-                    'java.lang.*'
-            ]
-            staticImportsWhitelist = []
+            importsWhitelist = []
+            staticImportsWhitelist = ['dsl.Arduino_DSL']
             staticStarImportsWhitelist= []
             //language tokens disallowed
 //			tokensBlacklist= []
@@ -40,11 +35,11 @@ class Arduino_DSL {
             tokensWhitelist= []
             //types allowed to be used  (including primitive types)
             constantTypesClassesWhiteList= [
-                    int, Integer, Number, Integer.TYPE, String, Object
+                    int, Integer, Number, String, boolean, Object, SIGNAL
             ]
             //classes who are allowed to be receivers of method calls
             receiversClassesWhiteList= [
-                    int, Number, Integer, String, Object
+                    int, Integer, Number, String, boolean, Object, SIGNAL
             ]
         }
 
@@ -54,6 +49,14 @@ class Arduino_DSL {
         return configuration
     }
 
+    static Program program(String _) {
+        // Note: this is a static method to import in scripts
+        return null
+    }
+
+    static enum SIGNAL { HIGH, LOW }
+
+    @TypeChecked
     void eval(File scriptFile) {
         Script script = shell.parse(scriptFile)
 

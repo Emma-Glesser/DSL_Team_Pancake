@@ -10,12 +10,16 @@ public class Arduino_DSL_Binding extends Binding {
 	private Script script;
 	
 	private Arduino_DSL_Model model;
-	
-	public Arduino_DSL_Binding() {
+
+    private static final Arduino_DSL_Binding instance = new Arduino_DSL_Binding();
+    public static Arduino_DSL_Binding getInstance() {
+        return instance;
+    }
+
+	private Arduino_DSL_Binding() {
 		super();
 	}
 	
-	@SuppressWarnings("rawtypes")
 	public Arduino_DSL_Binding(Map variables) {
 		super(variables);
 	}
@@ -29,23 +33,23 @@ public class Arduino_DSL_Binding extends Binding {
 		this.script = script;
 	}
 	
-	public void setGroovuinoMLModel(Arduino_DSL_Model model) {
+	public void setArduino_DSL_Model(Arduino_DSL_Model model) {
 		this.model = model;
 	}
 	
 	public Object getVariable(String name) {
-		// Easter egg (to show you this trick: seb is now a keyword!)
-		if ("seb".equals(name)) {
-			// could do something else like: ((App) this.getVariable("app")).action();
-			System.out.println("Seb, c'est bien");
-			return script;
-		}
 		return super.getVariable(name);
 	}
 	
 	public void setVariable(String name, Object value) {
-		super.setVariable(name, value);
-	}
+        try {
+            this.getVariable(name);
+        } catch (Exception e) {
+            super.setVariable(name, value);
+            return;
+        }
+        throw new RuntimeException("Already existing identifiers : " + name);
+    }
 	
 	public Arduino_DSL_Model getArduinoDSLModel() {
 		return this.model;
