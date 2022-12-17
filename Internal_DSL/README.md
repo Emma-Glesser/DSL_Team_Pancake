@@ -4,7 +4,7 @@ This is our internal DSL made using Groovy
 
 ## How to build
 
-Use the script `buil.sh` to get a Jar of our DSL located in `/target`.
+Use the script `build.sh` to get a Jar of our DSL located in `/target`.
 
 ## How to use
 
