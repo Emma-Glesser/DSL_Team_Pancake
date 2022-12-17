@@ -1,6 +1,5 @@
 package kernel.behavioral
 
-import dsl.Arduino_DSL_Binding
 import kernel.generator.Visitor
 import kernel.structural.Actuator
 
@@ -19,7 +18,7 @@ class ActionActuator extends Action {
     }
 
     void becomes(SIGNAL signal) {
-        this.value = (signal instanceof String ? (SIGNAL)(Arduino_DSL_Binding.instance).getVariable(signal) : (SIGNAL) signal)
+        this.value = signal
     }
 
     Actuator getActuator() {
